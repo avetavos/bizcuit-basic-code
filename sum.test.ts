@@ -9,3 +9,7 @@ describe('sum', () => {
     expect(() => sum('invalid', 3)).toThrow('Invalid input');
   });
 });
+
+beforeAll((done) => {
+  done();
+})

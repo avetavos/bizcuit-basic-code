@@ -11,20 +11,24 @@ export const sum = (a: any, b: any) => {
   return aInt + bInt
 }
 
-const cli = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout,
-})
-
-cli.question('Enter first number: ', (a) => {
-  cli.question('Enter second number: ', (b) => {
-    try {
-      const result = sum(a, b)
-      console.log(`Result: ${result}`)
-    } catch (error) {
-      console.error(error)
-    } finally {
-      cli.close()
-    }
+const main = () => {
+  const cli = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout,
   })
-})
+  
+  cli.question('Enter first number: ', (a) => {
+    cli.question('Enter second number: ', (b) => {
+      try {
+        const result = sum(a, b)
+        console.log(`Result: ${result}`)
+      } catch (error) {
+        console.error(error)
+      } finally {
+        cli.close()
+      }
+    })
+  })
+}
+
+main()
